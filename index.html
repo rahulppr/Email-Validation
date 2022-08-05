@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Javascript Email Validation</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Unicorn CSS -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+</head>
+<body>
+      <div class="input-field">
+        <input type="email" placeholder="Enter your Mail">
+        <i class="uil uil-envelope email-icons"></i>
+        <!-- <i class="uil uil-check-circle"></i> -->
+      </div>
+
+      <script>
+        const input = document.querySelector("input");
+        emailIcons = document.querySelector(".email-icons");
+
+input.addEventListener("keyup",()=>{
+  let pattern = /^[^]+@[^]+\.[a-z]{2,3}$/;
+
+  if(input.value === ""){
+    emailIcons.classList.replace("uil-check-circle","uil-envelope");
+    return emailIcons.style.color = "#4bb543";
+  }
+  if(input.value.match(pattern)){
+    emailIcons.classList.replace("uil-envelope","uil-check-circle");
+    return emailIcons.style.color = "#4bb543";
+  }
+  emailIcons.classList.replace("uil-check-circle","uil-envelope");
+   emailIcons.style.color = "#de0611";
+
+  })
+
+      </script>
+
+</body>
+</html>
